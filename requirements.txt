@@ -1,0 +1,11 @@
+selenium
+requests
+bs4
+pandas
+openai
+fastapi
+uvicorn
+langchain
+langchain_ollama
+ollama
+jinja2
