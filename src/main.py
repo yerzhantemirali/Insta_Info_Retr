@@ -2,10 +2,10 @@ from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-from scraper import get_info
+from src.scraper import get_info
 # from send_api import get_result
 
-from local_llama import give_description
+from src.local_llama import give_description
 
 
 
