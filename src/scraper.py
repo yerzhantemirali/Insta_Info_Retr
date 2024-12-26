@@ -27,11 +27,11 @@ def get_info(keyword:str):
 
     username.clear()
 
-    username.send_keys('yerzhantemirali')
+    username.send_keys('your_insta_login_here')
 
     password.clear()
 
-    password.send_keys("fizmat2005")
+    password.send_keys("your_insta_password_here")
 
 
     button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
