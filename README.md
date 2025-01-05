@@ -24,9 +24,11 @@ conda create -n insta_project python=3.8 -y
  conda activate insta_project
  ```
  3) install the requirements
+```
  pip install -r requirements.txt
+ ```
 
- 4) download LLM from ollama that you can run locally and in local_llama.py file replace "Llama3:8b" with the name of the model you downloaded:
+ 5) download LLM from ollama that you can run locally and in local_llama.py file replace "Llama3:8b" with the name of the model you downloaded:
  ```
  model = OllamaLLM(model="Llama3:8b")
  ```
