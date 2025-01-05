@@ -46,7 +46,7 @@ uvicorn src.main:app --reload
 
 
 ## To do
-Soon I am planning to create a dataset with different accounts names and with what they are all about by scraping twitter and instagram to fine tune the local LLM I am using so that the descriptions will be more accurate.
+Soon I am planning to create a dataset with different account names and with what they are all about by scraping twitter and instagram to fine tune the local LLM I am using so that the descriptions will be more accurate.
 
 
 ## Contacts 
