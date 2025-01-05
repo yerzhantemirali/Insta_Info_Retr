@@ -8,7 +8,7 @@ This project has a web page that asks user to input the publicly available insta
 
 
 
-## watch the video about how the project works
+## Demonstration of the project
 ![alt text](<markdown/Screenshot 2025-01-05 at 7.55.30 PM.png>)
 ![alt text](<markdown/Screenshot 2025-01-05 at 7.55.55 PM.png>)
 ## Steps for recreating and running this project: 
