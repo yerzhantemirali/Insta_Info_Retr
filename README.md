@@ -1,7 +1,7 @@
 # Description of person's interest based on their instagram account
 
 ## Intro to the project
-The project scrapes some person's instagram account provided by user and sends a prompt containing list of the following accounts to a local LLM to get a description about the person's interests.
+The project scrapes a target person's instagram account provided by user and sends a prompt containing list of the following accounts to a local LLM to get a description about the person's interests.
 
 ## Project description
 This project has a web page that asks user to input the publicly available instagram account of a person whose interests they want to find out. This project uses selenium library to automate web browsing: specifically to log into your instagram account, search for the provided account and scrape the list of the accounts the person follows. And then this list is included in the prompt that is sent to local LLM (Llama:8b) about the possible interests of the person. The output of the LLM is then appears in the other html web page. To deal with APIs, FastAPI and uvicorn were utilized. Jinja2Templates were used for templating of dynamic html pages.
