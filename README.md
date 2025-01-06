@@ -1,57 +1,78 @@
-# Description of person's interest based on their instagram account
+# **Person's Interest Detector from Instagram Account**
 
-## Intro to the project
-The project scrapes a target person's instagram account provided by user and sends a prompt containing list of the following accounts to a local LLM to get a description about the person's interests.
+## **Project Overview**
+This project aims to analyze a person's interests based on the Instagram accounts they follow. By providing a publicly accessible Instagram username, the project retrieves the list of accounts followed by the target user, processes this data using a locally hosted LLM (Llama:8B), and generates a detailed description of their potential interests.
 
-## Project description
-This project has a web page that asks user to input the publicly available instagram account of a person whose interests they want to find out. This project uses selenium library to automate web browsing: specifically to log into your instagram account, search for the provided account and scrape the list of the accounts the person follows. And then this list is included in the prompt that is sent to local LLM (Llama:8b) about the possible interests of the person. The output of the LLM is then appears in the other html web page. To deal with APIs, FastAPI and uvicorn were utilized. Jinja2Templates were used for templating of dynamic html pages.
+### **Features**
+- Automates Instagram scraping using Selenium.
+- Generates personalized interest descriptions using Llama:8B LLM.
+- Displays results on a dynamic web interface powered by FastAPI and Jinja2.
+
+---
 
 
+## **Demonstration**
+**Screenshots of the working project:**
 
-## Demonstration of the project
+**Web Page to Input Instagram Username**  
 ![alt text](<markdown/Screenshot 2025-01-05 at 7.55.30 PM.png>)
+
+**Generated Interest Description**  
 ![alt text](<markdown/Screenshot 2025-01-05 at 7.55.55 PM.png>)
-## Steps for recreating and running this project: 
-1) clone this repository
-```
+
+---
+
+## **Setup and Usage**
+
+### **1. Clone the Repository**
+```bash
 git clone https://github.com/yerzhantemirali/Insta_Info_Retr.git
+cd Insta_Info_Retr
 ```
-2) create conda environment 
+
+### **2. Create and Activate a Conda Environment**
 ```
 conda create -n insta_project python=3.8 -y
+conda activate insta_project
 ```
- ```
- conda activate insta_project
- ```
- 3) install the requirements
+
+### **3. Install Dependencies**
 ```
- pip install -r requirements.txt
- ```
+pip install -r requirements.txt
+```
 
- 5) download LLM from ollama that you can run locally and in local_llama.py file replace "Llama3:8b" with the name of the model you downloaded:
- ```
- model = OllamaLLM(model="Llama3:8b")
- ```
+### **4. Set Up Your Local LLM**
+- Download a suitable LLM from [Ollama](https://ollama.ai).
 
-5) in scraper.py file
+- Replace "Llama3:8b" in the local_llama.py file with the name of the model you downloaded:
+```
+model = OllamaLLM(model="Your_Model_Name_Here")
+```
+
+### **5. Configure Instagram Login Credentials**
+- Open scraper.py and replace the placeholders with your Instagram login credentials:
 ``` 
 username.send_keys('your_insta_login_here')
 password.send_keys("your_insta_password_here")
 ```
-put your instagram login and password
 
-6) write the following in the terminal of your IDE:
+### **6. Run the Application**
+In your terminal, execute the following command to start the server:
 ```
 uvicorn src.main:app --reload
 ``` 
+Access the web app at http://127.0.0.1:8000.
 
+---
 
+## **Future Plans**
 
-## To do
-Soon I am planning to create a dataset with different account names and with what they are all about by scraping twitter and instagram to fine-tune the local LLM I am using so that the descriptions will be more accurate.
+- Dataset Creation: Scrape Instagram and Twitter to build a dataset of account names and their descriptions.
 
+- Fine-Tuning LLM: Use the dataset to fine-tune the local LLM for more accurate and personalized descriptions.
 
-## Contacts 
-If you have any questions about the project feel free to email me 
+---
 
-Gmail: yerzhantemirali@gmail.com
+## **Contacts**
+Feel free to reach out for any questions or feedback about the project:
+Email: yerzhantemirali@gmail.com
