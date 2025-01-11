@@ -14,6 +14,9 @@ import json
 import os
 from urllib.parse import urlparse
 import csv
+import os
+from dotenv import load_dotenv
+
 
 
 def get_info(keyword:str):
@@ -25,13 +28,16 @@ def get_info(keyword:str):
 
     password = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='password']")))
 
-    username.clear()
+    load_dotenv()
 
-    username.send_keys('your_insta_login_here')
+    insta_login = os.getenv("INSTAGRAM_LOGIN")
+    insta_password = os.getenv("INSTAGRAM_PASSWORD")
+
+    username.clear()
+    username.send_keys(insta_login)
 
     password.clear()
-
-    password.send_keys("your_insta_password_here")
+    password.send_keys(insta_password)
 
 
     button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()

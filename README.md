@@ -11,7 +11,7 @@ This project aims to analyze a person's interests based on the Instagram account
 ---
 
 
-## **Demonstration**
+## **Example Usage**
 **Screenshots of the working project:**
 
 **Web Page to Input Instagram Username**  
@@ -30,33 +30,74 @@ git clone https://github.com/yerzhantemirali/Insta_Info_Retr.git
 cd Insta_Info_Retr
 ```
 
-### **2. Create and Activate a Conda Environment**
+### **2. Create and Activate a Poetry Environment with Dependency Installation**
+- Install and initialize the package manager
 ```
-conda create -n insta_project python=3.8 -y
-conda activate insta_project
-```
-
-### **3. Install Dependencies**
-```
-pip install -r requirements.txt
+pip install poetry
+poetry init
 ```
 
-### **4. Set Up Your Local LLM**
-- Download a suitable LLM from [Ollama](https://ollama.ai).
+- To install dependencies in the virtual environment replace ‘dependencies = [ ]’ in 'pyproject.toml' file with:
+```
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+selenium = "*"
+requests = "*"
+beautifulsoup4 = "*"
+pandas = "*"
+openai = "*"
+fastapi = "*"
+uvicorn = "*"
+langchain = "*"
+langchain-ollama = "*"
+ollama = "*"
+jinja2 = "*"
+python-dotenv = "*"
+python-multipart = "*"
+```
+
+- To save a virtual environment in your project folder and to install dependencies in there type: 
+```
+poetry config virtualenvs.in-project true
+poetry install
+```
+
+- To activate the virtual environment get the path by:
+```
+poetry env info --path
+```
+
+If you have Mac or Linux OS follow with:
+```
+source <put_the_path_here>/bin/activate
+```
+
+If you have windows:
+```
+<put_the_path_here>\Scripts\activate
+```
+
+
+### **3. Set Up Your Local LLM**
+- Download a suitable LLM from [Ollama](https://ollama.ai) (you should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models).
 
 - Replace "Llama3:8b" in the local_llama.py file with the name of the model you downloaded:
 ```
 model = OllamaLLM(model="Your_Model_Name_Here")
 ```
-
-### **5. Configure Instagram Login Credentials**
-- Open scraper.py and replace the placeholders with your Instagram login credentials:
-``` 
-username.send_keys('your_insta_login_here')
-password.send_keys("your_insta_password_here")
+- Run the follwoing command in you terminal:
+```
+ollama run <put_LLM_name_you_downloaded>
 ```
 
-### **6. Run the Application**
+### **4. Configure Instagram Login Credentials**
+- Change the name of the file “.env.example” to just “.env” and put your Instagram login credentials:
+``` 
+INSTAGRAM_LOGIN=yourinstagramlogin
+INSTAGRAM_PASSWORD=yourinstagrampassword
+```
+
+### **5. Run the Application**
 In your terminal, execute the following command to start the server:
 ```
 uvicorn src.main:app --reload
