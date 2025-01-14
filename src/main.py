@@ -3,11 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from src.scraper import get_info
-# from send_api import get_result
-
 from src.local_llama import give_description
-
-
 
 app = FastAPI()
 
@@ -23,8 +19,6 @@ async def handle_form(request:Request, userInput: str = Form(...)):
    
     prompt = get_info(userInput)
   
-    ##for OpenAI api
-    # prompt_result = get_result(prompt)
     prompt_result = give_description(prompt)
 
     return templates.TemplateResponse("submit.html", {"request": request, "prompt_result": prompt_result})

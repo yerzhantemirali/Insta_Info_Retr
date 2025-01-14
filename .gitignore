@@ -1,0 +1,6 @@
+.env
+markdown
+pyproject.toml
+src/__pycache__
+.venv
+requirements.txt
