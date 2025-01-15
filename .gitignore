@@ -9,3 +9,4 @@ src/__pycache__
 .isort.cfg
 .pre-commit-config.yaml
 poetry.lock
+.DS_Store
