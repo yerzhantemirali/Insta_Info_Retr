@@ -8,3 +8,4 @@ src/__pycache__
 .flake8
 .isort.cfg
 .pre-commit-config.yaml
+poetry.lock
