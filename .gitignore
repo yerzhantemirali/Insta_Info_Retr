@@ -3,5 +3,8 @@ markdown
 pyproject.toml
 src/__pycache__
 .venv
-requirements.txt
 .git
+.black
+.flake8
+.isort.cfg
+.pre-commit-config.yaml
