@@ -19,7 +19,6 @@ This project aims to analyze a person's interests based on the Instagram account
 
 **Generated Interest Description**  
 ![alt text](<markdown/second.png>)
-![alt text](<.png>)
 
 ---
 
