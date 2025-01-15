@@ -8,7 +8,19 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-def get_info(keyword: str):
+def get_prompt(keyword: str) -> str:
+    """
+    Automate the web browing to collect data and to return a text (prompt).
+
+    This function takes string type account name and automates browing to collect data about the
+    account to return a prompt asing about the description of the person.
+
+    Args:
+        keyword (str): The incoming account name.
+
+    Returns:
+        str: prompt containing list of followings of the account that asks for descrpition based on it.
+    """
     driver = webdriver.Chrome()
     driver.get("https://www.instagram.com/")
 
@@ -31,15 +43,11 @@ def get_info(keyword: str):
     password.clear()
     password.send_keys(insta_password)
 
-    button = (
-        WebDriverWait(driver, 10)
-        .until(
-            EC.element_to_be_clickable(
-                (By.CSS_SELECTOR, "button[type='submit']")
-            )
-        )
-        .click()
+    button = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))
     )
+
+    button.click()
 
     search_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable(
