@@ -15,10 +15,11 @@ This project aims to analyze a person's interests based on the Instagram account
 **Screenshots of the working project:**
 
 **Web Page to Input Instagram Username**  
-![alt text](<markdown/Screenshot 2025-01-05 at 7.55.30 PM.png>)
+![alt text](<markdown/first.png>)
 
 **Generated Interest Description**  
-![alt text](<markdown/Screenshot 2025-01-05 at 7.55.55 PM.png>)
+![alt text](<markdown/second.png>)
+![alt text](<.png>)
 
 ---
 
