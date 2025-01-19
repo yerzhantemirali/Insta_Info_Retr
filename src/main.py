@@ -1,3 +1,5 @@
+import re
+
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -47,6 +49,11 @@ async def handle_form(
     prompt = get_prompt(userInput)
 
     prompt_result = give_description(prompt)
+
+    prompt_result = re.sub(
+        r"\*\*(.*?)\*\*:", r"<br><br><b>\1</b><br>", prompt_result
+    )
+    prompt_result = re.sub(r"(\d\.)", r"", prompt_result)
 
     return templates.TemplateResponse(
         "submit.html", {"request": request, "prompt_result": prompt_result}

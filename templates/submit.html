@@ -11,11 +11,12 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;;
+            text-align: left;
             height: 100vh;
             background: linear-gradient(135deg, #a18cd1, #fbc2eb);
             color: #333;
+            overflow-y: auto;
         }
 
         /* Centered content container */
@@ -45,7 +46,7 @@
 <body>
     <div class="centered-content">
         <h1>Here is the information about the person's interests:</h1>
-        <p>{{prompt_result}}</p>
+        <p>{{ prompt_result|safe }}</p>
     </div>
 </body>
 </html>
