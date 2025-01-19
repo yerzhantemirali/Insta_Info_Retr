@@ -62,19 +62,9 @@ poetry config virtualenvs.in-project true
 poetry install
 ```
 
-- To activate the virtual environment get the path by:
+- To activate the virtual environment:
 ```
-poetry env info --path
-```
-
-If you have Mac or Linux OS follow with:
-```
-source <put_the_path_here>/bin/activate
-```
-
-If you have windows:
-```
-<put_the_path_here>\Scripts\activate
+poetry env use python 
 ```
 
 
@@ -85,7 +75,7 @@ If you have windows:
 ```
 model = OllamaLLM(model="Your_Model_Name_Here")
 ```
-- Run the follwoing command in you terminal:
+- Run the following command in your terminal:
 ```
 ollama run <put_LLM_name_you_downloaded>
 ```
